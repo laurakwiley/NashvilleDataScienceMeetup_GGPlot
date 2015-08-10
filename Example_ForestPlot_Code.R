@@ -67,7 +67,7 @@ ggplot(data) +
 ## Rember that we have the coord_flip so although we want the vertical line, we need to use geom_hline
 ggplot(data) +
   geom_pointrange(aes(x = snp, y = odds_ratio, ymin = lower_ci, ymax = upper_ci, color = model, shape = model, alpha = sig), position = position_dodge(width = 0.5)) +
-  geom_hline(y = 1, lty = 2) +
+  geom_hline(y = 1) +
   scale_alpha_manual(values = c(0.5,1)) +
   coord_flip()
 
@@ -120,7 +120,7 @@ original_assocs <- tbl_df(data.frame(snp = c("rs1051730","rs931794","rs748404"),
 ggplot(data) +
   geom_pointrange(aes(x = snp, y = odds_ratio, ymin = lower_ci, ymax = upper_ci, color = model, shape = model, alpha = sig, fill = sig), position = position_dodge(width = 0.5)) +
   geom_hline(y = 1, lty = 2) +
-  geom_point(data = original_assocs, aes(x=snp, y = odds_ratio),color = "red") +
+  geom_point(data = original_assocs, aes(x=snp, y = odds_ratio),color = "red", size = 3) +
   scale_alpha_manual(values = c(0.5,1,1,1)) +
   scale_shape_manual(values = c(23,22,24)) +
   scale_fill_manual(values = c("white","#000000","#e79f00","#0072B2")) +
@@ -136,7 +136,7 @@ ggplot(data) +
 ggplot(data) +
   geom_pointrange(aes(x = snp, y = odds_ratio, ymin = lower_ci, ymax = upper_ci, color = model, shape = model, alpha = sig, fill = sig), position = position_dodge(width = 0.5)) +
   geom_hline(y = 1, lty = 2) +
-  geom_point(data = original_assocs, aes(x=snp, y = odds_ratio),color = "red") +
+  geom_point(data = original_assocs, aes(x=snp, y = odds_ratio),color = "red", size = 3) +
   scale_alpha_manual(values = c(0.5,1,1,1)) +
   scale_fill_manual(values = c("white","#000000","#e79f00","#0072B2")) +
   scale_shape_manual(values = c(23,22,24), breaks = c("No Correction","NLP","ICD"), labels = c("Unadjusted","NLP","ICD"), name = "Adjustment Type") +
@@ -148,7 +148,7 @@ ggplot(data) +
 ggplot(data) +
   geom_pointrange(aes(x = snp, y = odds_ratio, ymin = lower_ci, ymax = upper_ci, color = model, shape = model, alpha = sig, fill = sig), position = position_dodge(width = 0.5)) +
   geom_hline(y = 1, lty = 2) +
-  geom_point(data = original_assocs, aes(x=snp, y = odds_ratio),color = "red") +
+  geom_point(data = original_assocs, aes(x=snp, y = odds_ratio),color = "red", size = 3) +
   scale_alpha_manual(values = c(0.5,1,1,1), breaks = c(0,1), labels = c("Not Significant","Significant (p<0.004)"), name = "Genetic Association") +
   scale_fill_manual(values = c("white","#000000","#e79f00","#0072B2"), breaks = c("white","#000000"), labels = c("Not Significant","Significant(p<0.004")) +
   scale_shape_manual(values = c(23,22,24), breaks = c("No Correction","NLP","ICD"), labels = c("Unadjusted","NLP","ICD"), name = "Adjustment Type") +
@@ -163,7 +163,7 @@ ggplot(data) +
 ggplot(data) +
   geom_pointrange(aes(x = snp, y = odds_ratio, ymin = lower_ci, ymax = upper_ci, color = model, shape = model, alpha = sig, fill = sig), position = position_dodge(width = 0.5)) +
   geom_hline(y = 1, lty = 2) +
-  geom_point(data = original_assocs, aes(x=snp, y = odds_ratio),color = "red", size = I(3)) +
+  geom_point(data = original_assocs, aes(x=snp, y = odds_ratio),color = "red", size = 3) +
   scale_alpha_manual(values = c(0.5,1,1,1), breaks = c(0,1), labels = c("Not Significant","Significant (p<0.004)"), name = "Genetic Association") +
   scale_fill_manual(values = c("white","#000000","#e79f00","#0072B2"), breaks = c("white","#000000"), labels = c("Not Significant","Significant(p<0.004")) +
   scale_shape_manual(values = c(23,22,24), breaks = c("No Correction","NLP","ICD"), labels = c("Unadjusted","NLP","ICD"), name = "Adjustment Type") +
@@ -176,7 +176,7 @@ ggplot(data) +
 ggplot(data) +
   geom_pointrange(aes(x = snp, y = odds_ratio, ymin = lower_ci, ymax = upper_ci, color = model, shape = model, alpha = sig, fill = sig), position = position_dodge(width = 0.5)) +
   geom_hline(y = 1, lty = 2) +
-  geom_point(data = original_assocs, aes(x=snp, y = odds_ratio),color = "red", size = I(3)) +
+  geom_point(data = original_assocs, aes(x=snp, y = odds_ratio),color = "red", size = 3) +
   scale_alpha_manual(values = c(0.5,1,1,1), breaks = c(0,1), labels = c("Not Significant","Significant (p<0.004)"), name = "Genetic Association") +
   scale_fill_manual(values = c("white","#000000","#e79f00","#0072B2"), breaks = c("white","#000000"), labels = c("Not Significant","Significant(p<0.004")) +
   scale_shape_manual(values = c(23,22,24), breaks = c("No Correction","NLP","ICD"), labels = c("Unadjusted","NLP","ICD"), name = "Adjustment Type") +
@@ -193,7 +193,7 @@ ggplot(data) +
 ggplot(data) +
   geom_pointrange(aes(x = snp, y = odds_ratio, ymin = lower_ci, ymax = upper_ci, color = model, shape = model, alpha = sig, fill = sig), position = position_dodge(width = 0.5)) +
   geom_hline(y = 1, lty = 2) +
-  geom_point(data = original_assocs, aes(x=snp, y = odds_ratio),color = "red", size = I(3)) +
+  geom_point(data = original_assocs, aes(x=snp, y = odds_ratio),color = "red", size = 3) +
   scale_alpha_manual(values = c(0.5,1,1,1), breaks = c(0,1), labels = c("Not Significant","Significant (p<0.004)"), name = "Genetic Association") +
   scale_fill_manual(values = c("white","#000000","#e79f00","#0072B2"), breaks = c("white","#000000"), labels = c("Not Significant","Significant(p<0.004")) +
   scale_shape_manual(values = c(23,22,24), breaks = c("No Correction","NLP","ICD"), labels = c("Unadjusted","NLP","ICD"), name = "Adjustment Type") +
