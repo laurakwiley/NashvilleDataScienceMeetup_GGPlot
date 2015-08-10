@@ -206,4 +206,4 @@ ggplot(data) +
   ggtitle("Effect of Smoking Detection Algorithm on Lung Cancer Genetic Associations") +
   theme_bw()
 
-
+ggsave("Example_ForestPlot_Plot.png",width = 8, height = 7, units = "in")
